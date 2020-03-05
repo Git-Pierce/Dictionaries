@@ -10,7 +10,10 @@ print("US: ", countries["US"])  #print value
 
 # retrieving countries using IF ELSE, subscripts vs get method
 code = "IE"
-#print(countries[code])
+try:
+    print(countries[code])
+except:
+    print(code, ":is invalid country code")
 print("country IE:", countries.get(code))
 print("country IE:", countries.get(code, "Unknown"))
 
@@ -66,3 +69,9 @@ codeskeys.sort()
 print("country keys", codeskeys)
 for code in codeskeys: #combined a list and a dictionary
     print(code + "   " + countries[code])
+
+try:
+    code = input("Enter a country code:")
+    print(countries[code])
+except:
+    print(code, "- Invalid country code entered")
